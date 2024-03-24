@@ -243,7 +243,8 @@ exports.deleteMyProfile = async (req,res) =>{
         //logout user after deleting profile
         res.status(200).cookie("token",null,{expires:new Date(Date.now()),httpOnly:true,
             secure: true, // Ensure the cookie is only sent over HTTPS(use during pushing it to production)
-            sameSite: 'None', //dealing with cross-site requests and the usage of third-party cookies(only use in production code)});
+            sameSite: 'None', //dealing with cross-site requests and the usage of third-party cookies(only use in production code)
+            });
 
         //to delete all the post associated with that deleted account
         for(let i=0;i<posts.length;i++){
