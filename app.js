@@ -11,7 +11,6 @@ app.use(express.urlencoded({limit:"50mb",extended:true})); // for can use body p
 app.use(cookieParser());
 //app.use(cors({credentials: true,origin:`${process.env.FRONTEND_URL}`}));
 app.use(cors({credentials: true,origin:`${process.env.FRONTEND_URL}`,methods:['GET','POST','PUT','DELETE']}));
-app.options('*', cors());
 
 //Importing Routes
 const post = require("./routes/post");
