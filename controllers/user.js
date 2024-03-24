@@ -67,10 +67,10 @@ exports.login= async(req,res)=>{
 
         const options ={
             expires:new Date(Date.now()+5*24*60*60*1000),
+            secure: true,//use this when the code is in production for https cookie request
             httpOnly:true,
-            secure: true, // Ensure the cookie is only sent over HTTPS(use during pushing it to production)
-            sameSite: 'None', //dealing with cross-site requests and the usage of third-party cookies(only use in production code)
-            }
+            sameSite: 'None',//dealing with cross-site requests and the usage of third-party cookies
+            };
 
         //add cookie when login successfully
         res.status(200).cookie("token",token,options).json({
