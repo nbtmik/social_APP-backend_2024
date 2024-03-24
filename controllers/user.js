@@ -27,13 +27,13 @@ exports.register = async(req,res)=>{
             httpOnly:true,
             secure: true, // Ensure the cookie is only sent over HTTPS(use during pushing it to production)
             sameSite: 'None', //dealing with cross-site requests and the usage of third-party cookies(only use in production code)
-            }
+            };
 
         //add cookie when login successfully
         res.status(201).cookie("token",token,options).json({
             success:true,
             user,
-            token,
+            //token,
         });
 
     }catch(error){
