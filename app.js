@@ -9,7 +9,8 @@ require("dotenv").config({path:"config/config.env"});
 app.use(express.json({limit:"50mb"})); // extend limit of 50mb item
 app.use(express.urlencoded({limit:"50mb",extended:true})); // for can use body parser
 app.use(cookieParser());
-app.use(cors({credentials: true,origin:`${process.env.FRONTEND_URL}`}));
+//app.use(cors({credentials: true,origin:`${process.env.FRONTEND_URL}`}));
+app.use(cors({credentials: true,origin:`${process.env.FRONTEND_URL}`,methods:['GET','POST','PUT','DELETE']}));
 
 //Importing Routes
 const post = require("./routes/post");
