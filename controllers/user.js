@@ -25,8 +25,8 @@ exports.register = async(req,res)=>{
         const options ={
             expires:new Date(Date.now()+5*24*60*60*1000),
             httpOnly:true,
-            //secure: true, // Ensure the cookie is only sent over HTTPS(use during pushing it to production)
-            //sameSite: 'None', //dealing with cross-site requests and the usage of third-party cookies(only use in production code)
+            secure: true, // Ensure the cookie is only sent over HTTPS(use during pushing it to production)
+            sameSite: 'None', //dealing with cross-site requests and the usage of third-party cookies(only use in production code)
             }
 
         //add cookie when login successfully
@@ -68,8 +68,8 @@ exports.login= async(req,res)=>{
         const options ={
             expires:new Date(Date.now()+5*24*60*60*1000),
             httpOnly:true,
-            //secure: true, // Ensure the cookie is only sent over HTTPS(use during pushing it to production)
-            //sameSite: 'None', //dealing with cross-site requests and the usage of third-party cookies(only use in production code)
+            secure: true, // Ensure the cookie is only sent over HTTPS(use during pushing it to production)
+            sameSite: 'None', //dealing with cross-site requests and the usage of third-party cookies(only use in production code)
             }
 
         //add cookie when login successfully
